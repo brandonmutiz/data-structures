@@ -7,13 +7,13 @@ package unity0;
 
 /**
  *
- * @author AULA4
+ * @author AULA1
  */
-public class Stack {
-    private int[] data;
+public class Queve {
+private int[] data;
     private int top;
     
-    public Stack(){
+    public Queve (){
         data = new int [100];
         top = 0;
     }
@@ -22,8 +22,12 @@ public class Stack {
         top++;
     }
     public int remove(){
+       int d =data [0];
+       for(int i=0; i<top-1; i++){
+           data[i]=data [i+1];
+       }
         top--;
-        return data [top];
+        return d;
         
                
     }
@@ -34,6 +38,5 @@ public class Stack {
        System.out.println();
     }
     
-    
 }
-
+  
