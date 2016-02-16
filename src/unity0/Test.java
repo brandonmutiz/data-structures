@@ -12,8 +12,31 @@ package unity0;
 public class Test  {
     public static void main (String []args ) {
         testingQueue();
-        //testingStacks();
+        testingStacks();
+        testingLista();
+        }  
+           
+    
+    public static void testingLista(){
+                     Lista l=new Lista();
+      
+       for(int i=0;i<10;i++){
+           l.add(i+2, i);
+       }
+        
+       System.out.println("*********lista original******");
+       l.print();
+       l.add(12, 1);
+       
+        System.out.println("*******lista-adicion******");
+       l.print();
+       l.Remove(1);
+        System.out.println("******lista-borrar ****");
+       l.print();
+
     }
+
+    
     
     public static void testingStacks (){
         Stack s =new Stack();
