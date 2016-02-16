@@ -15,9 +15,8 @@ public class Test  {
         testingStacks();
         testingLista();
         }  
-           
-    
-    public static void testingLista(){
+          
+        public static void testingLista(){
                      Lista l=new Lista();
       
        for(int i=0;i<10;i++){
