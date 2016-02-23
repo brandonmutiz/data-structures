@@ -7,7 +7,7 @@ package unity0;
 
 /**
  *
- * @author JORGE ERASO
+ * @author brandonmutiz
  */
 public class Lista {
     private int[] data;
