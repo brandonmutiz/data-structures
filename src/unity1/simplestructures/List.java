@@ -31,6 +31,7 @@ public class List {
     }
     
     
+    
     public int count(){
         int count = 0;
         Node aux = head;
@@ -118,5 +119,25 @@ public class List {
             }
         }
     }
+    public void duplicate(){
+        if (head==null) return;
+        Node last = head,aux=head;
+        while(last.next!=null){
+            last=last.next;
+        }
+       int c= count();
+       for(int i=0; i<c; i++){
+           last.next=new Node(aux.data);
+           aux=aux.next;
+           last=last.next;
+       }
+    }
+    
+    public void Mirror(){
+        if(head==null)return;
+        
+    }
+    
 }
+
 
