@@ -1,4 +1,4 @@
-/*
+                                                                  /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -162,6 +162,65 @@ public class List {
        }
            head=head2;
        }
+       ///EVALUACION
+       
+       
+       public void inserZeros(){
+           if(head==null)return;
+           Node aux = head;
+            Node P= head;
+            while(aux.next!= null){
+                Node n= new Node (0);
+                aux=aux.next;
+               P.next= n;
+                n.next=aux;
+                P=aux;
+                
+            }
+                         
+        
+           
+       }
+       
+    public void removeMiddle(){
+       Node aux = head;
+       Node P= head;
+               if(head==null)return;
+               int c= count();
+        for(int i=0; i<c; i++){
+             
+        }
+                        aux= head;
+           while(aux.next!=null){
+           aux=aux.next;
+            c ++; 
+              P.next=aux.next;
+              
+        
+                       
+        }
+        
+        
+    }
+    
+    public void countOdds(){
+        if(head==null)return;
+        Node aux= head;
+        Node n= head;
+        int c= count(); 
+         while(aux.next!=null){
+            aux=aux.next;
+            c ++;
+            for(int i=0; i<c; i++){ //voy
+            if(i mod 2==0){
+                
+                
+            
+        
+        }
+    }
+  }
+}
 
 }
 
