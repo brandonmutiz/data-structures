@@ -133,11 +133,36 @@ public class List {
        }
     }
     
-    public void Mirror(){
+    public void reversprint (){
         if(head==null)return;
-        
+        if(head == null) return;
+        Node ok = null;
+        Node aux;
+            do {            
+            aux = head;
+            while(aux.next != ok){
+            aux = aux.next;
+                  }
+            System.out.print("  " + aux.data);
+                       ok = aux;
+        } while (ok != head);
+         System.out.println();
     }
-    
+
+
+      
+       public void invert (){
+         if(head == null) return;
+       Node aux = head,head2=null;
+       while(head!=null){
+           aux=head;
+           head=head.next;
+           aux.next=head2;
+           head2=aux;
+       }
+           head=head2;
+       }
+
 }
 
 
