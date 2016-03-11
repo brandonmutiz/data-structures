@@ -27,7 +27,8 @@ public class Test {
         System.out.println("total Nodes in List:  " + c);
         l.printFirstElement();
         l.printLastElement();
-        
+        l.removeIntercalated();
+        l.duplicateIntercalated();
     }
     
     public static void main (String [ ] args) {

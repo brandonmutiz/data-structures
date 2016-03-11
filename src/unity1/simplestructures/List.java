@@ -212,7 +212,7 @@ public class List {
             aux=aux.next;
             c ++;
             for(int i=0; i<c; i++){ //voy
-            if(i mod 2==0){
+            
                 
                 
             
@@ -220,8 +220,57 @@ public class List {
         }
     }
   }
-}
+    public void removeIntercalated(){
+    if(head==null)return;
+        Node aux = head;
+           Node P= head;
+        int c= count(); 
+    
+    for(int i= 0; i<c; i++){
+        if(i % 2 == 1){
+         P.next=aux.next;
+         P=aux;
+          aux=aux.next;
+          } else 
+            aux=aux.next;
+        }
+        
+    }
+    public void duplicateIntercalated(){
+        Node P= head;
+        Node aux = head;
+        while(aux.next!= null){
+        Node n =new Node (P.data);
+        P.next=n;
+        aux=aux.next;
+        n.next=aux;
+        P=aux;
+              
+    }
+    }
+    public void removeRecurrents(){
+        Node back= head;
+        back=head;
+        Node P= head; 
+        Node aux = head;
+        while(aux.next!= null){
+            P= head;
+           while( P!=aux){
+               if(P.data==aux.data){
+                   back.next=aux.next;
+                   
+               }
+               P=P.next;
+           }
+           back=aux;
+           aux=aux.next;
+        }
+    }
+    }
 
-}
+            
+
+
+
 
 
