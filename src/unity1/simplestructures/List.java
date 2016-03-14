@@ -133,6 +133,31 @@ public class List {
        }
     }
     
+    
+    public void duplicateMirror(){
+     if(head == null){
+            return;
+        }
+        Node last = head;
+        Node aux = head;
+        
+        while(last.next != null){
+            
+            last = last.next;
+            
+        }
+        int c = count();
+        for(int i = 0; i<c; i++){
+            Node n = new Node(aux.data);
+            n.next = last.next;
+            last.next = n;
+            aux = aux.next;
+            
+        }
+         }       
+                
+        
+      
     public void reversprint (){
         if(head==null)return;
         if(head == null) return;
@@ -162,7 +187,7 @@ public class List {
        }
            head=head2;
        }
-       ///EVALUACION
+       /// CORRECCION- EVALUACION
        
        
        public void inserZeros(){
@@ -176,50 +201,46 @@ public class List {
                 n.next=aux;
                 P=aux;
                 
-            }
-                         
-        
-           
+            }                      
+                  
        }
        
     public void removeMiddle(){
-       Node aux = head;
-       Node P= head;
-               if(head==null)return;
-               int c= count();
-        for(int i=0; i<c; i++){
-             
-        }
-                        aux= head;
-           while(aux.next!=null){
-           aux=aux.next;
-            c ++; 
-              P.next=aux.next;
-              
+                if(head == null) return;
+        Node aux = head;
+        int c = count()/2;
         
-                       
-        }
-        
+        int cont = 1;
+        while(aux.next != null){
+            cont++;
+            aux = aux.next;
+            if(cont == c){
+                aux.next = aux.next.next;
+            }
         
     }
-    
-    public void countOdds(){
-        if(head==null)return;
-        Node aux= head;
-        Node n= head;
-        int c= count(); 
-         while(aux.next!=null){
-            aux=aux.next;
-            c ++;
-            for(int i=0; i<c; i++){ //voy
-            
-                
-                
-            
-        
-        }
     }
-  }
+   
+    public int countOdds(){
+        int odds = 0;
+        Node aux = head;
+        
+        while(aux != null){
+            if(aux.data % 2 == 1){
+                odds++;
+            }
+            aux = aux.next;
+
+        }
+        
+        return odds;
+    }
+            
+          
+          
+     
+      // HOMEWORK 1
+     
     public void removeIntercalated(){
     if(head==null)return;
         Node aux = head;
@@ -268,7 +289,8 @@ public class List {
     }
     }
 
-            
+    
+        
 
 
 

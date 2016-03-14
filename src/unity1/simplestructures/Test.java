@@ -29,6 +29,8 @@ public class Test {
         l.printLastElement();
         l.removeIntercalated();
         l.duplicateIntercalated();
+        l.removeRecurrents();
+        
     }
     
     public static void main (String [ ] args) {
