@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package unity2.doublelist;
+package unity1.doublelist;
 
 /**
  *
@@ -61,6 +61,28 @@ public class List {
          }
     
  }
+     public void removeFirst(){
+         if(head==null)return;
+         head=head.next;
+         head.back=null;
+         
+     }
+     
+     
+     public void removeLast(){
+         Node aux= head,p=head;
+         while ( aux.next!= null){
+             aux=aux.next;
+             while ( p.next!= aux){
+               p=p.next;  
+             }
+            
+         }
+         p.next=null;
+         aux.back=p;
+         
+     }
+     
      
 }
 
