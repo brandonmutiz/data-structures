@@ -11,12 +11,14 @@ package Unity2.ABCTress;
  */
 public class Node {
     protected int data;
-    protected int left;
-    protected int right;
+    protected Node left;
+    protected Node right;
     
     public Node(int d){
        
-       
+       data = d;
+         left = right = null;
+   
         
     }
 }
