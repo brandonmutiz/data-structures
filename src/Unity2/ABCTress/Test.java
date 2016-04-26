@@ -26,6 +26,12 @@ public class Test {
          }else{
              System.out.println(" "+v+ "doesn't a leaf");
          }
+         System.out.println("recursivePrint");
+         t.recursivePrint();
+         
+         int r=t.recursiveCount();
+         System.out.println("Total nodes: " + r);
+         
      }
 
 }
