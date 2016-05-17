@@ -401,7 +401,70 @@ public void rDraw() {
             this.add(r.data+1);
       }
     }
-   
+   public void reversePrint(){
+   reversePrint(root);
   }
+  
+  private void reversePrint(Node r){
+      
+      if(r==null) return;
+      
+      reversePrint(r.right);
+      System.out.println(""+r.data);
+      reversePrint(r.left);
+  }
+  public void printSonsAlone() {
+
+ printSonAlone(root);
+  }
+  
+  private void printSonAlone(Node r){
+      
+      if(r==null) return;
+      
+      printSonAlone(r.left);
+      printSonAlone(r.right);
+      
+      if(r.left==null && r.right != null ){
+          System.out.println(""+r.right.data);
+      }else if (r.left!=null && r.right==null){
+          
+          System.out.println(""+r.left.data);
+      }
+  }
+  public int countOdds() {
+      return countOdds(root);
+  }
+  
+  public void printMissings() {
+
+   printMissings(root); 
+    }
+
+   private void printMissings(Node r){
+      
+      if(r==null) return;
+      
+           
+      
+      
+}
+  
+  private int countOdds(Node r){
+     
+      if(r==null) return 0;
+      int count=0;
+      if(r.data%2==1){
+          count++; 
+      }
+      
+      countOdds(r.right);
+      countOdds(r.left);
+      return count+1;
+      
+  }
+}
+  
+  
      
            
