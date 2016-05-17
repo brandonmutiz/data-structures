@@ -309,6 +309,99 @@ public void rDraw() {
          return rootInfo;
          
       }
+       public boolean isComplete(){
+        
+       return isComplete(root);
+       
+       
+    }
+    
+    private boolean isComplete(Node r){
+        
+       if (r==null) return true;
+       if ((r.left==null && r.right != null ) || (r.left!=null && r.right==null)){
+           return false;
+       }
+       
+      return isComplete(r.left) && isComplete(r.right);
+               
+      
+    }   
+                
+     public boolean Exist (int d){
+         
+         Node aux = root;
+         
+         while(aux != null){
+             if(d==aux.data){
+                 
+                 return true;
+                 
+             }else if(d > aux.data){
+                 aux=aux.right;
+                 
+                 }else{
+                 aux=aux.left;
+             }
+             
+         }
+         return false;
+ 
+         }  
+       
+           public void invert(){
+         invert(root);
+                        }
+    private void invert (Node r){
+        
+        if(r==null) return;
+        Node aux=r.left;
+        invert(r.left);
+        invert (r.right);
+        r.left=r.right;
+        r.right=aux;
+                                      
+    }
+    public void Prune(){
+    Prune(root);
+    }    
+    private void Prune(Node r){
+               
+       if (r==null) return;
+       
+        Prune(r.left);
+        Prune(r.right);
+       
+       if (r.left==null && r.right != null )  {
+           r.right=null;
+           
+       }else if (r.left!=null && r.right==null){
+           r.left=null;
+      }     
+       
+     }
+     
+  
+    public void Complete(){        
+    Complete(root);
+       
+   }
+   private void Complete (Node r){
+        
+       if (r==null) return;
+       
+        Complete(r.left);
+        Complete(r.right);
+       
+       if (r.left==null && r.right != null )  {
+           
+           this.add(r.data-1);
+           
+       }else if (r.left!=null && r.right==null){
+            this.add(r.data+1);
+      }
+    }
+   
   }
      
            

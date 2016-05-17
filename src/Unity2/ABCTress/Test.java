@@ -31,7 +31,25 @@ public class Test {
          
          int r=t.recursiveCount();
          System.out.println("Total nodes: " + r);
-         
+          System.out.println("Print Leafs");
+          
+         t.PrintLeafsR();
+        System.out.println("");
+        System.out.println("HEIGHT");
+        System.out.println(""+t.Height());
+        System.out.println("");
+        System.out.println("Draw Tree");
+        t.rDraw();
+         System.out.println(""+ t.isComplete());
+       
+       System.out.println(""+ t.Exist(4));
+       System.out.println("PRUEBA DE FALSO");
+       System.out.println("");
+       System.out.println(""+ t.Exist(50));
+       t.invert();
+       t.Prune();
+       t.Complete();
+        
      }
 
 }
