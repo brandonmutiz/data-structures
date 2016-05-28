@@ -443,11 +443,18 @@ public void rDraw() {
 
    private void printMissings(Node r){
       
-      if(r==null) return;
-      
-           
-      
-      
+              if(r.left != null && r.right == null) {
+            for(int i = r.left.data + 1 ; i < r.data; i++) {
+                System.out.println(" " + i);
+            }
+        } else if(r.left == null && r.right != null){
+            for(int i = r.data + 1; i < r.right.data; i++) {
+                System.out.print(" " + i);
+            }
+        }
+        printMissings(r.left);
+        printMissings(r.right);         
+            
 }
   
   private int countOdds(Node r){
@@ -463,8 +470,51 @@ public void rDraw() {
       return count+1;
       
   }
-}
-  
-  
+  public void remove(int d){
+        Node aux = root,p = null;
+        while(aux != null) {
+            p = aux;
+            if(d > aux.data) {
+                aux = aux.right;
+            } 
+            else if(d < aux.data) {
+                aux = aux.left;
+            } 
+            else {
+                if(aux == root) {
+                    if(aux.left == null) {
+                        root = aux.right;
+                    }
+                    else {
+                        root = aux.left;
+                        p = root;
+                    }
+                    while(p.right != null) {
+                        p = p.right;
+                    }
+                    p.right = aux.right;
+                }
+                else {
+                    if(d < p.data) {
+                        if(aux.left == null) {
+                            p.left = aux.right;
+                        }
+                        else {
+                            p.left = aux.left;
+                            p = p.left;
+                            while(p.right != null) {
+                                p = p.right;
+                            }
+                            p.right = aux.right;
+                        }
+                    }
+                    
+                }
+            }
+            return;
+        }
+    }
+
+}  
      
            
